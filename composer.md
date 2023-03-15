@@ -10,4 +10,4 @@ Os pacotes para instalação estão disponíveis em [Packagist](https://packagis
 
 Pimeiro comando que será abordado aqui é utilizado para criação de um projeto, no comando abaixo será baixado o framework Laravel.
 
-`composer create-project laravel/laravel`
+`composer create-project laravel/laravel nome-projeto`
