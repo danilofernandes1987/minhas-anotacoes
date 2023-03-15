@@ -8,4 +8,6 @@ O código abaixo cria um projeto na pasta atual do bash
 
 `php artisan serve --host=0.0.0.0 --port=8000`
 
-em --host com IP 0.0.0.0 a aplicação será acessada por qualquer maquina da rede, com o IP 127.0.0.1 só poderá ser acesso pelo localhost.
+Em --host com IP 0.0.0.0 a aplicação será acessada por qualquer maquina da rede, com o IP 127.0.0.1 só poderá ser acesso pelo localhost.
+
+##Criando Controller com Artisan.
