@@ -16,3 +16,7 @@ O Artisan proporciona a possibilidade de criar os Controllers com o comando:
 `php artisan make:controller NomeController`
 
 Existe uma convenção para nomenclaturas de metodos de um Controller que pode ser conferido [neste link](https://laravel.com/docs/10.x/controllers).
+
+
+### Dicas
+Para usar alguns comandos e o Artisan about é necessário instalar o php-mbstring
