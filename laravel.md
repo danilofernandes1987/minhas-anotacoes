@@ -19,4 +19,4 @@ Existe uma convenção para nomenclaturas de metodos de um Controller que pode s
 
 
 ### Dicas
-Para usar alguns comandos e o Artisan about é necessário instalar o php-mbstring
+Para usar alguns comandos e o Artisan about é necessário instalar o *php-mbstring
