@@ -1,0 +1,38 @@
+version: "3.9"
+services:
+    php:
+        build: .
+        container_name: laravel_php
+        ports:
+          - 3332:80
+        volumes:
+          - php_conf:/usr/local/etc/php/conf.d/
+          - ./public/app/:/var/www/html/
+        networks:
+          - bridge
+
+    mariadb:
+        image: mariadb:latest
+        container_name: laravel_mariadb
+        ports:
+          - 3308:3306
+        networks:
+          - bridge
+        environment:
+          MARIADB_ROOT_PASSWORD: myrootpass
+          MARIADB_USER: laravel
+          MARIADB_PASSWORD: myuserpass
+          MARIADB_DATABASE: laravel
+        volumes:
+          - mariadb_data:/var/lib/mysql
+          - mariadb_conf:/etc/mysql/conf.d
+networks:
+    bridge:
+        driver: bridge
+volumes:
+    php_conf:
+        driver: local
+    mariadb_data:
+        driver: local
+    mariadb_conf:
+        driver: local
