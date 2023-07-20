@@ -1,0 +1,1 @@
+# Instalação de servidor Apache2 em um servidor Ubuntu 22.04 sendo executado em Hyper-v.
