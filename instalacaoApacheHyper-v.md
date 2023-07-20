@@ -8,7 +8,7 @@ Foi instalado o Ubuntu na versão 22.04.
 
 `sudo apt install apache2`
 
-2.1 Verificando o funcionamento do Apache
+1. Verificando o funcionamento do Apache
 
 `sudo systemctl status apache2`
 
@@ -28,7 +28,7 @@ Foi instalado o Ubuntu na versão 22.04.
 
 `sudo nano /etc/php/8.1/apache2/php.ini`
 
-date.timezone = America/Sao_Paulo
-upload_max_filesize = 200
-post_max_size = 200
-max_input_vars = 5000
+date.timezone = America/Sao_Paulo  
+upload_max_filesize = 200  
+post_max_size = 200  
+max_input_vars = 5000  
