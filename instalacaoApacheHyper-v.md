@@ -75,7 +75,7 @@ e configure através do netplan a rede como estático.
 
 `sudo nano /etc/netplan/00-installer-config.yaml`
 
-```
+```bash
 # This is the network config written by 'subiquity'
 network:
   ethernets:
@@ -89,3 +89,8 @@ network:
             addresses: [192.168.10.1]
   version: 2
 ```
+Finalizado a edição, testar e aplicar as configurações do netplan
+
+`$ sudo netplan try`
+
+`$ sudo netplan apply`
