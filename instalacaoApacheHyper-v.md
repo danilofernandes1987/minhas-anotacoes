@@ -56,4 +56,36 @@ Criando um usuário para acesso externo ao banco de dados:
 
 `MariaDB [(none)]> grant all privileges on *.* to 'leandro'@'%' identified by 'minhasenha';`  
 `MariaDB [(none)]> flush privileges;`  
-`MariaDB [(none)]> exit`  
+`MariaDB [(none)]> exit`
+
+## Configuração da rede do Hyper-v
+
+Realizando alguns testes de usabilidade para estudos e laboratórios de Laravel foi verificado que o endereço de IP era alterado a cada reinicialização 
+da máquina virtual, isso não é interessante em um ambiente de desenvolvimento onde é necessário configurar o VSCode para programação utilizando ssh.
+
+Devido a esse problema, foram realizadas algumas pesquisas onde a solução mais fácil foi criar um adaptador de rede no Hyper-V, vSwitch Interno.
+
+No gerenciador do Hyper-V clique sobre o Node e escolha a opção Gerenciador de Comutador Virtual. Selecione a opção Interno, verifique as informações na tela e por 
+último, finalize a criação.
+
+Será criada uma nova interface de rede na máquina física, atribua a ela um IP estático como por exemplo: 192.168.10.1/24.
+
+Na máquina virtual é necessário adicionar mais um adaptador de rede, escolha no Comutador Virtual a Rede Interna. Após finalizado a adição, inicie a máquina virtual
+e configure através do netplan a rede como estático.
+
+`sudo nano /etc/netplan/00-installer-config.yaml`
+
+```
+# This is the network config written by 'subiquity'
+network:
+  ethernets:
+    eth0:
+      dhcp4: true
+    eth1:
+      addresses: [192.168.10.10/24]
+      dhcp4: false
+      optional: true
+      nameservers:
+            addresses: [192.168.10.1]
+  version: 2
+```
