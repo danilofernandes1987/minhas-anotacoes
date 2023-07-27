@@ -7,19 +7,27 @@ Foi instalado o Ubuntu na versão 22.04.
 
 Corrigindo o timezone do servidor:
 
-`timedatectl set-timezone Brazil/East`
+```bash
+timedatectl set-timezone Brazil/East
+```
 
 Instalando o apache2:
 
-`$ sudo apt install apache2`
+```bash
+$ sudo apt install apache2
+```
 
 Verificando o funcionamento do Apache:
 
-`$ sudo systemctl status apache2`
+```bash
+$ sudo systemctl status apache2
+```
 
 Instalando o aptitude para facilitar na instalação dos pacotes necessários:
 
-`$ sudo apt-get install aptitude`
+```bash
+$ sudo apt-get install aptitude
+```
 
 Instalando o php e suas dependencias:
 
@@ -29,11 +37,15 @@ $ sudo aptitude install php8.1 libapache2-mod-php8.1 php8.1-mysql php8.1-common 
 
 Instalando o Mariadb:
 
-`$ sudo aptitude install mariadb-server`
+```bash
+$ sudo aptitude install mariadb-server
+```
 
 Configurando algumas váriaveis do php.ini:
 
-`$ sudo nano /etc/php/8.1/apache2/php.ini`
+```bash
+$ sudo nano /etc/php/8.1/apache2/php.ini
+```
 
 ```bash
 date.timezone = America/Sao_Paulo  
@@ -43,15 +55,21 @@ max_input_vars = 5000
 ```
 Reiniciando o banco de dados para aplicação das alterações anteriores:
 
-`$ sudo systemctl restart mariadb`
+```bash
+$ sudo systemctl restart mariadb
+```
 
 Alterando a senha de root do mariadb:
 
-`ALTER USER 'root'@'localhost' IDENTIFIED BY 'MyNewPass';`
+```mysql
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'MyNewPass';
+```
 
 Liberando acesso para rede externa ao banco de dados MariaDB:
 
-`$ sudo nano /etc/mysql/mariadb.conf.d/50-server.cnf`
+```bash
+$ sudo nano /etc/mysql/mariadb.conf.d/50-server.cnf
+```
 
 Altere a linha bind-address de 127.0.0.1 para 0.0.0.0.
 
@@ -78,7 +96,9 @@ Será criada uma nova interface de rede na máquina física, atribua a ela um IP
 Na máquina virtual é necessário adicionar mais um adaptador de rede, escolha no Comutador Virtual a Rede Interna. Após finalizado a adição, inicie a máquina virtual
 e configure através do netplan a rede como estático.
 
-`sudo nano /etc/netplan/00-installer-config.yaml`
+```bash
+$ sudo nano /etc/netplan/00-installer-config.yaml
+```
 
 ```bash
 # This is the network config written by 'subiquity'
@@ -96,6 +116,10 @@ network:
 ```
 Finalizado a edição, testar e aplicar as configurações do netplan
 
-`$ sudo netplan try`
+```bash
+$ sudo netplan try
+```
 
-`$ sudo netplan apply`
+```bash
+$ sudo netplan apply
+```
