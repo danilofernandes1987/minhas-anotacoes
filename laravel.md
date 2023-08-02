@@ -23,6 +23,20 @@ php artisan make:controller NomeController
 
 Existe uma convenção para nomenclaturas de metodos de um Controller que pode ser conferido [neste link](https://laravel.com/docs/10.x/controllers).
 
+## Criando Migrations
+
+Para criar uma migration, execute o comando abaixo:
+
+```bash
+php artisan make:migration create_table_nomeTabela --create=nomeTabela
+```
+
+Caso a migration tenha sido executada, porém não tenha realizado alteração no banco, pode ser executado o comando abaixo
+
+```bash
+php artisan migrate:reflesh
+```
+
 
 ### Dicas
 Para usar alguns comandos e o Artisan about é necessário instalar o *php-mbstring*
@@ -40,3 +54,4 @@ cp .env.example .env
 ```bash
 php artisan key:generate
 ```
+
