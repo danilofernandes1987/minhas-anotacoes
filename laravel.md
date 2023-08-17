@@ -44,7 +44,7 @@ Para usar alguns comandos e o Artisan about é necessário instalar o *php-mbstr
 Para realizar clone de um repositório git, é necessário executar os seguintes comandos para baixar as bibliotecas e dependencias.
 
 ```bash
-composer install --no-scripts
+composer update
 ```
 
 ```bash
