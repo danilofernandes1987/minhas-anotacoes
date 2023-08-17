@@ -55,3 +55,6 @@ cp .env.example .env
 php artisan key:generate
 ```
 
+```bash
+php artisan migrate --seed
+```
