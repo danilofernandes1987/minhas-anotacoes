@@ -11,6 +11,11 @@ Corrigindo o timezone do servidor:
 sudo timedatectl set-timezone Brazil/East
 ```
 
+Para o Ubuntu server 24.04:
+```bash
+timedatectl set-timezone America/Sao_Paulo
+```
+
 Instalando o aptitude para facilitar na instalação dos pacotes necessários:
 
 ```bash
